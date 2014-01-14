@@ -1,7 +1,11 @@
 BookmarkApplication::Application.routes.draw do
+  resources :categories
+
   get "site/index"
+  get "site/about"
   devise_for :users
   resources :bookmarks
+  resource :categories
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -6,6 +6,14 @@
       <%= f.input :url %>
     </div>
 
+    <div class="form-inputs">
+      <%= f.input :category_id,:collection => Category.pluck(:name,:id),:include_blank => false %>
+    </div>
+
+    <div class="form-inputs">
+      <%= f.input :is_shared, :label => "Is Shared" %>
+    </div>
+
     <div class="form-actions">
       <%= f.button :submit %>
     </div>

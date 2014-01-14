@@ -29,7 +29,7 @@ class BookmarksController < ApplicationController
     @bookmark.user_id = current_user.id
 
     respond_to do |format|
-      if @bookmark.save!
+      if @bookmark.save
         format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
         format.json { render action: 'show', status: :created, location: @bookmark }
       else
@@ -74,6 +74,6 @@ class BookmarksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bookmark_params
-      params.require(:bookmark).permit(:title, :url)
+      params.require(:bookmark).permit(:title, :url,:category_id, :is_shared)
     end
 end

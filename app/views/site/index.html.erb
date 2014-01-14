@@ -1,7 +1,16 @@
+<% unless current_user %>
+    <div class="panel">
+      <h1>Share your bookmarks!</h1>
+      <p>A simple app to track and share your beloved bookmarks with others.</p>
+      <%= link_to "Get started today", new_user_registration_path, :class => "button button-large" %>
+    </div>
+<%end%>
+
 <h2>Latest Bookmarks</h2>
 <table style="width: 100%">
   <thead>
   <tr>
+    <th>Bookmark Category</th>
     <th>Url</th>
   </tr>
   </thead>
@@ -9,8 +18,30 @@
   <tbody>
   <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= link_to bookmark.title, bookmark.url %></td>
+        <h1>
+          <td><%= bookmark.category.try(:name)%></td>
+        </h1>
+
+        <h1>
+          <td><%= link_to bookmark.title, bookmark.url %></td>
+        </h1>
       </tr>
   <% end %>
   </tbody>
 </table>
+
+<hr>
+
+<div class="row">
+  <div class="large-8 columns">
+    <h3>My Bookmarks</h3>
+    <p>
+      Let's store your bookmarks and share your favourite bookmarks to everybody.
+    </p>
+    <p><a class="button [secondary success alert]" href="http://github.com/kishore-mohan" target="_blank">Learn more</a>.</p>
+  </div>
+  <div class="large-4 columns">
+    <h3>About this app</h3>
+    <p>This is a tutorial app developed by <a href="http://github.com/kishore-mohan" target="_blank">Kishore Mohan</a> as a companion to the rails article. Check the source code on <a href="http://github.com/kishore-mohan/bookmark-application" target="_blank">GitHub</a>. </p>
+  </div>
+</div>

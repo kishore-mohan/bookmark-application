@@ -24,15 +24,17 @@
   <div class="large-12 columns">
 
     <!-- Navigation -->
-
     <div class="row">
       <div class="large-12 columns">
 
-        <nav class="top-bar">
+        <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <!-- Title Area -->
             <li class="name">
-              <h1><a href="/">Bookmarks</a></h1>
+              <h1><a href="/">MyBookmarks</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#">Menu</a>
             </li>
           </ul>
 
@@ -41,7 +43,7 @@
             <ul class="right">
               <li class="divider"></li>
               <% if current_user %>
-                  <li><%= link_to 'My Bookmarks', bookmarks_path %></li>
+                  <li><%= link_to 'New Bookmarks', bookmarks_path %></li>
                   <li class="divider"></li>
 
                   <li class="has-dropdown">
@@ -97,15 +99,14 @@
       <div class="large-12 columns"><hr />
         <div class="row">
           <div class="large-6 columns">
-            <p>&copy; Copyright no one at all.</p>
+            <p>&copy; Copyrights by @kish</p>
           </div>
 
           <div class="large-6 columns">
             <ul class="inline-list right">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Etc..</a></li>
+              <li><%=link_to "About", site_about_path%></li>
+              <li><a href="https://twitter.com/kishorevlrtn">Twitter</a></li>
+              <li><a href="https://www.facebook.com/kishore.mohan.165">Facebook</a></li>
             </ul>
           </div>
         </div>

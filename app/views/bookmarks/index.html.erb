@@ -16,9 +16,9 @@
       <tr>
         <td><%= bookmark.title %></td>
         <td><%= bookmark.url %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', bookmark, class: "button" %></td>
+        <td><%= link_to 'Edit', edit_bookmark_path(bookmark), class: "button" %></td>
+        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' }, class: "large red awesome" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Bookmark', new_bookmark_path %>
+<%= link_to 'New Bookmark', new_bookmark_path, class: "button" %>
