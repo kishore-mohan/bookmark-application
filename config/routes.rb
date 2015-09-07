@@ -1,9 +1,10 @@
 BookmarkApplication::Application.routes.draw do
+  mount LikeDislike::Engine, at: '/'
+  devise_for :user
   resources :categories
 
   get "site/index"
   get "site/about"
-  devise_for :users
   resources :bookmarks
   resource :categories
 
